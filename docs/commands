@@ -1,0 +1,14 @@
+Invoke-RestMethod -Method Put `
+-Uri "http://127.0.0.1:5000/api/players/1" `
+-ContentType "application/json" `
+-Body '{"name":"TestPlayer","credits":0,"home_planet_id":1}'
+
+Invoke-RestMethod -Method Post `
+>> -Uri "http://127.0.0.1:5000/api/players/1/ships" `
+>> -ContentType "application/json" `
+>> -Body '{"name":"SecondShip","fuel":500,"max_fuel":500,"x":30.0,"y":30.0}'
+
+Invoke-RestMethod -Method Post `
+>> -Uri "http://127.0.0.1:5000/api/planets" `
+>> -ContentType "application/json" `
+>> -Body '{"name":"Fal I","population":20000000,"description":"A thriving market planet.","x":40,"y":30}'
